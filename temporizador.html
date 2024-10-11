@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordenadas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Felicidades, has resuelto el acertijo!</h1>
+    <p>Espera unos segundos...</p>
+    <p id="temporizador">10</p>
+
+    <p id="coordenadas" style="display: none;">Las coordenadas son: 40.7128° N, 74.0060° W</p>
+
+    <script>
+        let tiempo = 10;
+        const temporizadorElemento = document.getElementById('temporizador');
+        const coordenadasElemento = document.getElementById('coordenadas');
+
+        const cuentaRegresiva = setInterval(() => {
+            tiempo--;
+            temporizadorElemento.textContent = tiempo;
+
+            if (tiempo === 0) {
+                clearInterval(cuentaRegresiva);
+                temporizadorElemento.style.display = 'none';
+                coordenadasElemento.style.display = 'block';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

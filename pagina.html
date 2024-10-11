@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acertijo 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resuelve el acertijo</h1>
+    <p>Si me nombras, desaparezco. ¿Qué soy?</p>
+
+    <input type="text" id="respuesta" placeholder="Escribe tu respuesta">
+    <button onclick="comprobarRespuesta()">Enviar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function comprobarRespuesta() {
+            const respuesta = document.getElementById('respuesta').value.toLowerCase();
+            const resultado = document.getElementById('resultado');
+            
+            if (respuesta === 'silencio') {
+                window.location.href = 'pagina2.html'; // Redirige a la siguiente página
+            } else {
+                resultado.textContent = 'Respuesta incorrecta. Inténtalo de nuevo.';
+            }
+        }
+    </script>
+</body>
+</html>
